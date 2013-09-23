@@ -6,8 +6,8 @@ require 'json'
 require './tag_list'
 
 SSL = {
-  :ssl_client_cert => OpenSSL::X509::Certificate.new(File.read("/Users/tarlij01/Documents/Certs/Forge.pem")),
-  :ssl_client_key => OpenSSL::PKey::RSA.new(File.read("/Users/tarlij01/Documents/Certs/Forge.pem")),
+  :ssl_client_cert => OpenSSL::X509::Certificate.new(File.read("./dependencies/cert.pem")),
+  :ssl_client_key => OpenSSL::PKey::RSA.new(File.read("./dependencies/cert.pem")),
 }  
 
 BASE_URL = "https://api.live.bbc.co.uk/ldp-core/creative-works-legacy?about="
