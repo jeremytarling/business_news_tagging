@@ -1,0 +1,10 @@
+<modify-entry
+   committed-rev="1258074"
+   committed-date="2013-09-23T09:34:01.550831Z"
+   name=""
+   last-author="/emailAddress=jeremy.tarling@bbc.co.uk/CN=Jeremy Tarling/OU=BBC - FM - News/O=British Broadcasting Corporation/L=London/C=GB"/>
+<delete-changelist
+   name=""/>
+<committed
+   name=""
+   revision="1258074"/>

@@ -1,0 +1,6 @@
+    <p><%= result['title'] %></p>
+    <p><%= result['dateModified'] %></p>
+    <p><a href="<%= result['@id'] %> "><%= result['@id'] %></a></p>
+    <p><%= result['description'] %></p>
+    <img src="<%= result['thumbnail'][1]['@id'] %>" />
+
