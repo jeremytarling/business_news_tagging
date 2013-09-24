@@ -26,6 +26,13 @@ https://repo.dev.bbc.co.uk/playground/tarlij01/Business_Tagging
 
 6500d436-0a25-4ea1-a8e6-63f9231d3e1c
 
+Gemfile.lock
+file
+0
+
+
+add
+
 app.rb
 file
 1257982
@@ -59,6 +66,20 @@ copied
 
 
 669
+
+Procfile
+file
+0
+
+
+add
+
+dependencies
+dir
+
+
+
+add
 
 Gemfile
 file
