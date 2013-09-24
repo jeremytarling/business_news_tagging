@@ -1,5 +1,6 @@
 before do
-@tags = [
+
+@business_themes = [
 { :guid => "90e896ec-eca6-454d-a90d-6e2be9d6bd21", :label => "Aerospace" },
 { :guid => "332d553c-c200-4d46-b903-63ec682d8852", :label => "Asian economy" },
 { :guid => "cfb8bd8c-0638-4383-9dec-8d1703c8b4b8", :label => "Banking" },
@@ -23,7 +24,10 @@ before do
 { :guid => "37e67301-1f31-4e94-b2e0-f92e29834802", :label => "Retailing" },
 { :guid => "cec5d136-f83d-4e00-a3be-d22a7b89401f", :label => "Trade" },
 { :guid => "1947f3fd-ff95-4d71-b762-59b6c2f60fd1", :label => "UK economy" },
-{ :guid => "6f694397-5780-47da-aaa9-fe9515e29eaf", :label => "US economy" },
+{ :guid => "6f694397-5780-47da-aaa9-fe9515e29eaf", :label => "US economy" }
+]
+
+@uk_companies = [
 { :guid => "5250ca1e-7a0f-4dbe-ad72-b4c81f4662f6", :label => "AstraZeneca" },
 { :guid => "ad0a44b9-964c-4029-9918-149788e53c6e", :label => "BAE Systems" },
 { :guid => "06b89b97-4d00-4054-b3c6-849a5073a9b6", :label => "Barclays" },
@@ -53,29 +57,33 @@ before do
 { :guid => "4cd2dd9f-4320-4715-8644-bde5ae9c6e1e", :label => "Sainsbury's" },
 { :guid => "07df5e85-475c-43b8-94de-d15fb465d55f", :label => "Sports Direct" },
 { :guid => "a2810be1-f5e1-478e-be15-c6aec1fbe23d", :label => "Tesco" },
-{ :guid => "352c8814-fd7f-48af-a0a9-861991cc9152", :label => "Vodafone" },
-{ :guid => "92bcfc9f-bff2-4f1a-b38e-182542106fb9", :label => "Apple" },
-{ :guid => "4795be02-dfe8-4a8d-b318-0609533ae17a", :label => "Google" },
-{ :guid => "3c3f3366-06ea-44fc-afa8-aa3bfac49a87", :label => "Facebook" },
-{ :guid => "a798cf4b-f4ba-4fa7-8315-5d51e603c363", :label => "Microsoft" },
+{ :guid => "352c8814-fd7f-48af-a0a9-861991cc9152", :label => "Vodafone" }
+]
+
+@international_companies = [
 { :guid => "8da727e1-7c50-4bb5-b768-8b7c695a8829", :label => "Amazon" },
+{ :guid => "92bcfc9f-bff2-4f1a-b38e-182542106fb9", :label => "Apple" },
+{ :guid => "d843e8a6-14bd-4194-b0af-0ead627f5e69", :label => "BMW" },
 { :guid => "f96d36b3-603f-4fda-b344-cc2e54d07d52", :label => "Boeing" },
 { :guid => "6719e889-460e-4f8f-b760-4cbe3d0b5890", :label => "EADS (Airbus)" },
-{ :guid => "ef6385ce-b000-42ef-8199-38ff0c3088f0", :label => "Nokia" },
-{ :guid => "df5ae277-a7d6-4d51-ab4c-71c795acb75c", :label => "Samsung" },
-{ :guid => "d4dfd925-94ec-41b0-9999-e4a5b6b12e25", :label => "Ryanair" },
 { :guid => "6e9ed25d-2bab-4367-ac6f-5d09c979450c", :label => "Exxon Mobil" },
-{ :guid => "0299b667-7c98-489f-accf-6f654adade9d", :label => "IBM" },
-{ :guid => "03682b83-aa22-4b12-a447-e14edd2bee22", :label => "Wal-Mart" },
-{ :guid => "a963d677-a299-4002-bb3f-e81c8cf74c3d", :label => "Toyota" },
-{ :guid => "9dbb0043-eeb1-4b0d-9ae6-6ac0add89d9b", :label => "Sony" },
-{ :guid => "ca2e7ecf-b792-4ab9-9ecc-5d3b3530eef1", :label => "GM" },
+{ :guid => "3c3f3366-06ea-44fc-afa8-aa3bfac49a87", :label => "Facebook" },
 { :guid => "a1eb8f2a-96c9-487e-ac92-cf2386f8d2e4", :label => "Ford" },
-{ :guid => "1d12bc83-c233-467d-ba38-9622697a14a7", :label => "Peugeot-Citreon" },
-{ :guid => "60e9f197-2f48-4ded-8383-ba6f3004bc6c", :label => "VW" },
-{ :guid => "d843e8a6-14bd-4194-b0af-0ead627f5e69", :label => "BMW" },
+{ :guid => "ca2e7ecf-b792-4ab9-9ecc-5d3b3530eef1", :label => "GM" },
+{ :guid => "4795be02-dfe8-4a8d-b318-0609533ae17a", :label => "Google" },
+{ :guid => "0299b667-7c98-489f-accf-6f654adade9d", :label => "IBM" },
+{ :guid => "a798cf4b-f4ba-4fa7-8315-5d51e603c363", :label => "Microsoft" },
+{ :guid => "b0bc0dc8-ac12-41e7-8f80-3e764a9d7683", :label => "Nissan" },
+{ :guid => "ef6385ce-b000-42ef-8199-38ff0c3088f0", :label => "Nokia" },
+{ :guid => "1d12bc83-c233-467d-ba38-9622697a14a7", :label => "Peugeot-Citroen" },
 { :guid => "2ce18d88-0578-445d-b062-5a278df64301", :label => "Renault" },
-{ :guid => "b0bc0dc8-ac12-41e7-8f80-3e764a9d7683", :label => "Nissan" }
+{ :guid => "d4dfd925-94ec-41b0-9999-e4a5b6b12e25", :label => "Ryanair" },
+{ :guid => "df5ae277-a7d6-4d51-ab4c-71c795acb75c", :label => "Samsung" },
+{ :guid => "9dbb0043-eeb1-4b0d-9ae6-6ac0add89d9b", :label => "Sony" },
+{ :guid => "a963d677-a299-4002-bb3f-e81c8cf74c3d", :label => "Toyota" },
+{ :guid => "60e9f197-2f48-4ded-8383-ba6f3004bc6c", :label => "VW" },
+{ :guid => "03682b83-aa22-4b12-a447-e14edd2bee22", :label => "Wal-Mart" }
 ]
+
 end
   

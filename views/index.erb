@@ -1,5 +1,30 @@
-<ul>
-<% @tags.each do |tag| %>
-	<li><a href="<%= tag[:guid] %>"><%= tag[:label]  %></a></li>
-<% end %>
-</ul>
+<table width="100%">
+	<tr>
+		<th>Business themes</th>
+		<th>UK companies</th>
+		<th>international companies</th>
+	</tr>
+	<tr>
+		<td valign="top">
+			<ul>
+			<% @business_themes.each do |business_theme| %>
+				<li><a href="/business_themes/<%= business_theme[:guid] %>"><%= business_theme[:label]  %></a></li>
+			<% end %>
+			</ul>
+		</td>
+		<td valign="top">
+			<ul>
+			<% @uk_companies.each do |uk_company| %>
+				<li><a href="/uk_companies/<%= uk_company[:guid] %>"><%= uk_company[:label]  %></a></li>
+			<% end %>
+			</ul>
+		</td>
+		<td valign="top">
+			<ul>
+			<% @international_companies.each do |international_company| %>
+				<li><a href="/international_companies/<%= international_company[:guid] %>"><%= international_company[:label]  %></a></li>
+			<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>

@@ -16,10 +16,26 @@ get '/' do
   erb :index  
 end
 
-get '/:guid' do
+get '/business_themes/:guid' do
   @url = BASE_URL + params[:guid]
   @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
   @data_json = JSON.parse @data.body  
   @results =  @data_json['results']
-  erb :article_list
+  erb :business_themes_article_list
+end
+
+get '/uk_companies/:guid' do
+  @url = BASE_URL + params[:guid]
+  @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
+  @data_json = JSON.parse @data.body  
+  @results =  @data_json['results']
+  erb :uk_companies_article_list
+end
+
+get '/international_companies/:guid' do
+  @url = BASE_URL + params[:guid]
+  @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
+  @data_json = JSON.parse @data.body  
+  @results =  @data_json['results']
+  erb :international_companies_article_list
 end
