@@ -1,30 +1,56 @@
-<table width="100%">
-	<tr>
-		<th>Business themes</th>
-		<th>UK companies</th>
-		<th>international companies</th>
-	</tr>
-	<tr>
-		<td valign="top">
-			<ul>
-			<% @business_themes.each do |business_theme| %>
-				<li><a href="/business_themes/<%= business_theme[:guid] %>"><%= business_theme[:label]  %></a></li>
-			<% end %>
-			</ul>
-		</td>
-		<td valign="top">
-			<ul>
-			<% @uk_companies.each do |uk_company| %>
-				<li><a href="/uk_companies/<%= uk_company[:guid] %>"><%= uk_company[:label]  %></a></li>
-			<% end %>
-			</ul>
-		</td>
-		<td valign="top">
-			<ul>
-			<% @international_companies.each do |international_company| %>
-				<li><a href="/international_companies/<%= international_company[:guid] %>"><%= international_company[:label]  %></a></li>
-			<% end %>
-			</ul>
-		</td>
-	</tr>
-</table>
+
+<div id="tag_list_business_themes">
+	<h2>Business themes</h2>
+	<ul>
+	<% @business_themes.each do |business_theme| %>
+		<li><a href="/business_themes/<%= business_theme[:guid] %>"><%= business_theme[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id="tag_list_business_storylines">
+	<h2>Business storylines</h2>
+	<ul>
+	<% @storylines.each do |storyline| %>
+		<li><a href="/storylines/<%= storyline[:guid] %>"><%= storyline[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id="tag_list_uk_institutions">
+	<h2>UK institutions</h2>
+	<ul>
+	<% @uk_institutions.each do |uk_institution| %>
+		<li><a href="/uk_institutions/<%= uk_institution[:guid] %>"><%= uk_institution[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id="tag_list_international_institutions">
+	<h2>International institutions</h2>
+	<ul>
+	<% @international_institutions.each do |international_institution| %>
+		<li><a href="/international_institutions/<%= international_institution[:guid] %>"><%= international_institution[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id="tag_list_uk_companies">
+	<h2>UK companies</h2>
+	<ul>
+	<% @uk_companies.each do |uk_company| %>
+		<li><a href="/uk_companies/<%= uk_company[:guid] %>"><%= uk_company[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id="tag_list_international_companies">
+	<h2>International companies</h2>
+	<ul>
+	<% @international_companies.each do |international_company| %>
+		<li><a href="/international_companies/<%= international_company[:guid] %>"><%= international_company[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+

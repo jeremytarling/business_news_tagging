@@ -6,8 +6,6 @@
 	<meta name="author" content="">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
         <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-
-
 </head>
 	<body>
 		<div id='results'></div>
@@ -21,9 +19,26 @@
 			<div id="local-header">
 				<p><a href="/">Business News - linked data tagging</a></p>
 			</div>
+		
                 </header>
 
-		<div id="content">       
+		<div id="container">  
+			
+			<div id="nav">
+				<p><a href="/">Home</a> |
+					<a href="/#tag_list_business_themes">Business themes</a> |
+					<a href="/#tag_list_business_storylines">Business storylines</a> |
+					<a href="/#tag_list_uk_institutions">UK institutions</a> |
+					<a href="/#tag_list_international_institutions">International institutions</a> |
+					<a href="/#tag_list_uk_companies">UK companies</a> |
+					<a href="/#tag_list_international_companies">International companies</a></p>
+
+				<hr />
+			</div>
+			
+			<div id="disclaimer">     
+				<p style="font-size:smaller">(This is not an official BBC website, it's a proof of concept to demonstrate dynamic content aggregation by topic, for more info please contact <a href="mailto:jeremy.tarling@bbc.co.uk">jeremy.tarling@bbc.co.uk</a>)</p>
+			</div>
 
 		<%= yield %>
 		

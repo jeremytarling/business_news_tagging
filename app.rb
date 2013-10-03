@@ -11,31 +11,44 @@ SSL = {
 }  
 
 BASE_URL = "https://api.live.bbc.co.uk/ldp-core/creative-works-legacy?about="
-  
+
+def getData
+  @url = BASE_URL + params[:guid]
+  @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
+  @data_json = JSON.parse @data.body  
+  @results =  @data_json['results']
+end
+
 get '/' do
   erb :index  
 end
 
+get '/storylines/:guid' do
+  getData
+  erb :storylines_article_list
+end
+
 get '/business_themes/:guid' do
-  @url = BASE_URL + params[:guid]
-  @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
-  @data_json = JSON.parse @data.body  
-  @results =  @data_json['results']
+  getData
   erb :business_themes_article_list
 end
 
 get '/uk_companies/:guid' do
-  @url = BASE_URL + params[:guid]
-  @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
-  @data_json = JSON.parse @data.body  
-  @results =  @data_json['results']
+  getData
   erb :uk_companies_article_list
 end
 
 get '/international_companies/:guid' do
-  @url = BASE_URL + params[:guid]
-  @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
-  @data_json = JSON.parse @data.body  
-  @results =  @data_json['results']
+  getData
   erb :international_companies_article_list
+end
+
+get '/uk_institutions/:guid' do
+  getData
+  erb :uk_institutions_article_list
+end
+
+get '/international_institutions/:guid' do
+  getData
+  erb :international_institutions_article_list
 end
