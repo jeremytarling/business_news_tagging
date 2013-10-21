@@ -1,7 +1,7 @@
 <% begin %> 
-	<% @this_business_theme = @business_themes.detect { |business_theme| business_theme[:guid] == params[:guid] } %>
+	<% @this_business_theme_inferred = @business_themes_inferred.detect { |business_theme_inferred| business_theme_inferred[:guid] == params[:guid] } %>
 
-	<h2>recent news about <%= @this_business_theme[:label] %></h2>	
+	<h2>recent articles about companies that are notably associated with <%= @this_business_theme_inferred[:label] %></h2>	
 
     <% @results.each do |result| %>
 
@@ -21,5 +21,5 @@
     <% end %>
 
 <% rescue => e %>
-      <p style="padding-left:2em">no content annotated with "<%= @this_business_theme[:label] %>" yet</p> 
+      <p style="padding-left:2em">no articles about companies notably associated with "<%= @this_business_theme_inferred[:label] %>" yet</p> 
 <% end %> 

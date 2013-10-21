@@ -1,9 +1,20 @@
 
 <div id="tag_list_business_themes">
-	<h2>Business themes</h2>
+	<h2>Business themes - direct annotation</h2>
+	<p>These indexes are produced by asking the LDP for the '10 most recent articles about &lt;someTheme&gt;'</p>
 	<ul>
 	<% @business_themes.each do |business_theme| %>
 		<li><a href="/business_themes/<%= business_theme[:guid] %>"><%= business_theme[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id="tag_list_business_themes_inferred">
+	<h2>Business themes - inferred annotation</h2>
+	<p>These indexes are produced by asking the LDP for the '10 most recent articles about companies, where the company is notably associated with &lt;someTheme&gt;'</p>
+	<ul>
+	<% @business_themes_inferred.each do |business_theme_inferred| %>
+		<li><a href="/business_themes_inferred/<%= business_theme_inferred[:guid] %>"><%= business_theme_inferred[:label]  %></a></li>
 	<% end %>
 	</ul>
 </div>
@@ -17,29 +28,20 @@
 	</ul>
 </div>
 
-<div id="tag_list_uk_institutions">
-	<h2>UK institutions</h2>
-	<ul>
-	<% @uk_institutions.each do |uk_institution| %>
-		<li><a href="/uk_institutions/<%= uk_institution[:guid] %>"><%= uk_institution[:label]  %></a></li>
-	<% end %>
-	</ul>
-</div>
-
-<div id="tag_list_international_institutions">
-	<h2>International institutions</h2>
-	<ul>
-	<% @international_institutions.each do |international_institution| %>
-		<li><a href="/international_institutions/<%= international_institution[:guid] %>"><%= international_institution[:label]  %></a></li>
-	<% end %>
-	</ul>
-</div>
-
 <div id="tag_list_uk_companies">
 	<h2>UK companies</h2>
 	<ul>
 	<% @uk_companies.each do |uk_company| %>
 		<li><a href="/uk_companies/<%= uk_company[:guid] %>"><%= uk_company[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id="tag_list_uk_institutions">
+	<h2>UK institutions</h2>
+	<ul>
+	<% @uk_institutions.each do |uk_institution| %>
+		<li><a href="/uk_institutions/<%= uk_institution[:guid] %>"><%= uk_institution[:label]  %></a></li>
 	<% end %>
 	</ul>
 </div>
@@ -53,4 +55,12 @@
 	</ul>
 </div>
 
+<div id="tag_list_international_institutions">
+	<h2>International institutions</h2>
+	<ul>
+	<% @international_institutions.each do |international_institution| %>
+		<li><a href="/international_institutions/<%= international_institution[:guid] %>"><%= international_institution[:label]  %></a></li>
+	<% end %>
+	</ul>
+</div>
 

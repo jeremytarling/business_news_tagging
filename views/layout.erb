@@ -10,38 +10,29 @@
 	<body>
 		<div id='results'></div>
                 <header role="banner">
-
 			<div id="global-header">
-				<a href="http://www.bbc.co.uk">
-					<img src="/images/bbc_blocks.png" width="84" height="24" alt="British Broadcasting Corporation" />
-				</a>
+				<a href="http://www.bbc.co.uk"><img src="/images/bbc_blocks.png" width="84" height="24" alt="British Broadcasting Corporation" /></a>
 			</div>
 			<div id="local-header">
 				<p><a href="/">Business News - linked data tagging</a></p>
 			</div>
-		
                 </header>
-
 		<div id="container">  
-			
 			<div id="nav">
 				<p><a href="/">Home</a> |
 					<a href="/#tag_list_business_themes">Business themes</a> |
+					<a href="/#tag_list_business_themes_inferred">Business themes (inferred)</a> |
 					<a href="/#tag_list_business_storylines">Business storylines</a> |
-					<a href="/#tag_list_uk_institutions">UK institutions</a> |
-					<a href="/#tag_list_international_institutions">International institutions</a> |
 					<a href="/#tag_list_uk_companies">UK companies</a> |
-					<a href="/#tag_list_international_companies">International companies</a></p>
-
+					<a href="/#tag_list_uk_institutions">UK institutions</a> |
+					<a href="/#tag_list_international_companies">International companies</a> |
+					<a href="/#tag_list_international_institutions">International institutions</a></p>
 				<hr />
 			</div>
-			
 			<div id="disclaimer">     
-				<p style="font-size:smaller">(This is not an official BBC website, it's a proof of concept to demonstrate dynamic content aggregation by topic, for more info please contact <a href="mailto:jeremy.tarling@bbc.co.uk">jeremy.tarling@bbc.co.uk</a>)</p>
+				<p style="font-size:smaller">(This is not an official BBC website, it's a proof of concept to demonstrate content aggregation by topic, for more info please contact <a href="mailto:jeremy.tarling@bbc.co.uk">jeremy.tarling@bbc.co.uk</a>)</p>
 			</div>
-
 		<%= yield %>
-		
 		</div>
         </body>
 </html>
