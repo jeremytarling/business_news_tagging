@@ -12,7 +12,7 @@ SSL = {
 
 BASE_URL = "https://api.bbc.co.uk/ldp-core/creative-works?about="
 
-BASE_URL_NAW = "https://api.bbc.co.uk/ldp-core/creative-works?about-tag-type=http%3A%2F%2Fwww.bbc.co.uk%2Fontologies%2Fnews%2FOrganisation&about-tag-predicate=http%3A%2F%2Fwww.bbc.co.uk%2Fontologies%2Fnews%2FnotablyAssociatedWith&about-tag-object="
+BASE_URL_ASSOCIATED = "https://api.bbc.co.uk/ldp-core/creative-works?about-tag-type=news:Organisation&about-tag-predicate=news:notablyAssociatedWith&about-tag-object="
 
 def getDataAbout
   @url = BASE_URL + params[:guid]
@@ -21,11 +21,11 @@ def getDataAbout
   @results =  @data_json['results']
 end
 
-def getDataNaw
-  @url = BASE_URL_NAW + params[:guid]
-  @data = RestClient::Resource.new(@url, SSL).get({:accept => "application/json-ld"}) 
-  @data_json = JSON.parse @data.body  
-  @results =  @data_json['results']
+def getDataAssociated
+  @url_associated = BASE_URL_ASSOCIATED + params[:guid]
+  @data_associated = RestClient::Resource.new(@url_associated, SSL).get({:accept => "application/json-ld"}) 
+  @data_json_associated = JSON.parse @data_associated.body  
+  @results_associated =  @data_json_associated['results']
 end
 
 get '/' do
@@ -38,13 +38,9 @@ get '/storylines/:guid' do
 end
 
 get '/business_themes/:guid' do
+  getDataAssociated
   getDataAbout
   erb :business_themes_article_list
-end
-
-get '/business_themes_inferred/:guid' do
-  getDataNaw
-  erb :business_themes_inferred_article_list
 end
 
 get '/uk_companies/:guid' do

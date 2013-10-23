@@ -5,15 +5,19 @@ before do
 ]
 
 @business_themes = [
+  { :guid => "90e896ec-eca6-454d-a90d-6e2be9d6bd21", :label => "Aerospace" },
   { :guid => "5c0cd048-408c-444a-b783-8e12adedbe16", :label => "African economy" },
   { :guid => "332d553c-c200-4d46-b903-63ec682d8852", :label => "Asian economy" },
+  { :guid => "cfb8bd8c-0638-4383-9dec-8d1703c8b4b8", :label => "Banking" },
   { :guid => "128555c7-c736-4e5d-b8aa-e016bd44a251", :label => "Benefits" },
   { :guid => "93a5bca0-1cc9-4b44-8f43-3e24b1dab7bc", :label => "Business of Sport" },
   { :guid => "db2aecd5-8532-4c12-ab0e-4cb56c31e16c", :label => "Business Management" },
+  { :guid => "65ba56b4-3f50-4217-ab8e-b3c1fe890364", :label => "Car industry" },
   { :guid => "6cd2cbe5-d407-4904-9e49-6ca33574eb8d", :label => "Commodities" },
   { :guid => "9f52c5bc-73a7-47c8-a6b5-e70eafbf6716", :label => "Companies" },
   { :guid => "aabac3a1-0529-4e5a-b4d7-7849ffd419f9", :label => "Economic growth" },
   { :guid => "ca170ae3-99c1-48db-9b67-2866f85e7342", :label => "Economy" },
+  { :guid => "fe536195-d9a5-40ff-89c4-f216213cfd9e", :label => "Energy" },
   { :guid => "41d87885-664f-4d92-931e-470b8fd7b16b", :label => "Entrepreneurship" },
   { :guid => "3525f630-ab85-473d-aebe-eb430bcbcfad", :label => "European economy" },
   { :guid => "91173495-d90c-4451-be72-23a1a823c8d2", :label => "Eurozone" },
@@ -23,21 +27,14 @@ before do
   { :guid => "ef48d0eb-5c56-4198-accc-a7ccca76ec50", :label => "Jobs" },
   { :guid => "afe5596a-f56c-4171-b2c2-14d0410a773b", :label => "Market Report" },
   { :guid => "c2350112-e7cb-4ade-b9ba-d124ff2cb745", :label => "Middle East economy" },
+  { :guid => "986d714c-6f18-43ff-9f37-e4b0267aeaf9", :label => "Mobile phones" },
   { :guid => "6580e8e1-00d6-4355-9999-1e998cf7d63f", :label => "Pensions" },
   { :guid => "20111747-026a-4687-a5a7-0a0499746ac6", :label => "Personal finance" },
+  { :guid => "37e67301-1f31-4e94-b2e0-f92e29834802", :label => "Retailing" },
   { :guid => "2c493367-e5a2-4c19-be5f-6e9342f5c591", :label => "Technology of business" },
   { :guid => "cec5d136-f83d-4e00-a3be-d22a7b89401f", :label => "Trade" },
   { :guid => "1947f3fd-ff95-4d71-b762-59b6c2f60fd1", :label => "UK economy" },
   { :guid => "6f694397-5780-47da-aaa9-fe9515e29eaf", :label => "US economy" }
-]
-
-@business_themes_inferred = [
-  { :guid => "90e896ec-eca6-454d-a90d-6e2be9d6bd21", :label => "Aerospace" },
-  { :guid => "cfb8bd8c-0638-4383-9dec-8d1703c8b4b8", :label => "Banking" },
-  { :guid => "65ba56b4-3f50-4217-ab8e-b3c1fe890364", :label => "Car industry" },
-  { :guid => "fe536195-d9a5-40ff-89c4-f216213cfd9e", :label => "Energy" },
-  { :guid => "986d714c-6f18-43ff-9f37-e4b0267aeaf9", :label => "Mobile phones" },
-  { :guid => "37e67301-1f31-4e94-b2e0-f92e29834802", :label => "Retailing" }
 ]
 
 @uk_companies = [

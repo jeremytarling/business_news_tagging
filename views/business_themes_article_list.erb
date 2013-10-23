@@ -1,3 +1,4 @@
+
 <% begin %> 
 	<% @this_business_theme = @business_themes.detect { |business_theme| business_theme[:guid] == params[:guid] } %>
 
@@ -8,7 +9,7 @@
       <table>
         <tr>
           <td rowspan="3"><img width="128" src="<%= result['thumbnail'][1]['@id'] %>" /></td>
-          <td><strong><a href="<%= result['@id'] %>"><%= result['title'] %></a></strong></td>
+          <td><strong><a href="<%= result['primaryContentOf'][0]['@id'] %>"><%= result['title'] %></a></strong></td>
         </tr>
         <tr>
           <td><%= result['description'] %></td>
@@ -23,3 +24,35 @@
 <% rescue => e %>
       <p style="padding-left:2em">no content annotated with "<%= @this_business_theme[:label] %>" yet</p> 
 <% end %> 
+
+
+
+
+<% unless @results_associated.nil? %>
+
+<% begin %>
+	<% @this_business_theme = @business_themes.detect { |business_theme| business_theme[:guid] == params[:guid] } %>
+
+        <h2>recent articles about companies that are notably associated with <%= @this_business_theme[:label] %></h2> 
+    <% @results_associated.each do |result_associated| %>
+
+      <table>
+        <tr>
+          <td rowspan="3"><img width="128" src="<%= result_associated['thumbnail'][1]['@id'] %>" /></td>
+          <td><strong><a href="<%= result_associated['primaryContentOf'][0]['@id'] %>"><%= result_associated['title'] %></a></strong></td>
+        </tr>
+        <tr>
+          <td><%= result_associated['description'] %></td>
+        </tr>
+        <tr>
+          <td valign="top"><%= result_associated['dateModified'] %></td>
+        </tr>
+      </table>
+
+    <% end %>
+
+<% rescue => e %>
+      <p style="padding-left:2em">no articles about companies notably associated with "<%= @this_business_theme[:label] %>" yet</p>
+<% end %>
+
+<% end %>

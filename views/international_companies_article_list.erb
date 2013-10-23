@@ -14,7 +14,7 @@
 	<table>
 		<tr>
 			<td rowspan="3"><img width="128" src="<%= result['thumbnail'][1]['@id'] %>" /></td>
-			<td><strong><a href="<%= result['@id'] %>"><%= result['title'] %></a></strong></td>
+			<td><strong><a href="<%= result['primaryContentOf'][0]['@id'] %>"><%= result['title'] %></a></strong></td>
 		</tr>
 		<tr>
 			<td><%= result['description'] %></td>
